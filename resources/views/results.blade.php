@@ -21,7 +21,7 @@
         </tr>
         @if($count==0)
             <tr>
-                <td>Null</td>
+                <td colspan="5" class="text-center text-capitalize">no matches found</td>
             </tr>
         @else
         @foreach ($results as $result)
@@ -30,7 +30,13 @@
                 <td>{{ $result->bookTitle }}</td>
                 <td>{{ $result->Author }}</td>
                 <td>{{ $result->shelfNumber }}</td>
-                <td>{{ $result->status }}</td>
+                <td
+                class="@if ($result->status == 'Available')
+                    border border-success border-2
+                @else
+                    border border-danger border-2
+                @endif"
+                >{{ $result->status }}</td>
             </tr>
         @endforeach
         @endif
