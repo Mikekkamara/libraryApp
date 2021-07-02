@@ -36,7 +36,7 @@
         @endif
 
     </table>
-    <a href="{{ route('home') }}" class="btn btn-outline-primary mx-auto form-control">Close</a>
+    <a href="{{ route('welcome') }}" class="btn btn-outline-primary mx-auto form-control">Close</a>
     </div>
     <script></script>
 </body>
