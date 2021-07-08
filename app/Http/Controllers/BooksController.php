@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\books;
+use App\Models\keyboardist;
 use Illuminate\Http\Request;
 use Symfony\Component\Console\Input\Input;
 
 class BooksController extends Controller
 {
-    public function findBook(Request $request){
+   /*  public function findBook(Request $request){
         $input = $request->input('input');
         $database = books::where('bookTitle','like', $input.'%')->get();
         $count = count($database);
@@ -18,14 +18,19 @@ class BooksController extends Controller
         ]);
         // dd($database);
 
-    }
+    } */
     public function addBook(Request $request){
 
-        books::create([
-            'bookTitle'=>$request->input('bookTitle'),
-            'Author'=>$request->input('Author'),
-            'shelfNumber'=>$request->input('shelfNumber'),
-            'status'=>$request->input('status')
+        keyboardist::create([
+            'Firstname'=>$request->input('firstName'),
+            'Middlename'=>$request->input('middleName'),
+            'Lastname'=>$request->input('lastName'),
+            'Altar'=>$request->input('altar'),
+            'Gender'=>$request->input('gender'),
+            'ContactNo'=>$request->input('contactNo'),
+            'WPastor'=>$request->input('WPastor'),
+            'PastorNo'=>$request->input('pastorNo'),
+            'Region'=>$request->input('region')
         ]);
         // return redirect()->route('home');
         session()->flash('msg', 'Book recorded successfully');
