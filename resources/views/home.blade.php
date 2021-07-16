@@ -17,7 +17,7 @@
                     <form action="{{ route('add') }}" method="post" class="">
             @csrf
                 <label for="firstName" class="form-label lead">firstName</label>
-                <input type="text" class="form-control text-capitalize" name="firstName" id="firstName"> <br>
+                <input type="text" class="form-control text-capitalize" name="firstName" id="firstName" autofocus> <br>
 
                 <label for="middleName" class="form-label lead">middleName</label>
                 <input type="text" class="form-control text-capitalize" name="middleName" id="middleName"> <br>

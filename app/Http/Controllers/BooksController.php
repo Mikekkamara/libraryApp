@@ -1,27 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\keyboardist;
+use App\Models\books;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Input\Input;
+use Monolog\Formatter\JsonFormatter;
 
 class BooksController extends Controller
 {
-   /*  public function findBook(Request $request){
+    public function findBook(Request $request){
         $input = $request->input('input');
         $database = books::where('bookTitle','like', $input.'%')->get();
         $count = count($database);
-        // dd($count);
+        ddd($database->toJson());
+
         return view('results')->with([
             'results'=>$database,
             'count'=>$count
         ]);
         // dd($database);
 
-    } */
+    }
     public function addBook(Request $request){
 
-        keyboardist::create([
+        books::create([
             'Firstname'=>$request->input('firstName'),
             'Middlename'=>$request->input('middleName'),
             'Lastname'=>$request->input('lastName'),
