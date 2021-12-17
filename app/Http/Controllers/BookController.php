@@ -13,11 +13,11 @@ class BookController extends Controller
         $count = count($database);
         // ddd($database->toJson());
 
+        // dd($database);
         return view('results')->with([
             'results'=>$database,
             'count'=>$count
         ]);
-        // dd($database);
 
     }
     public function addBook(Request $request){
