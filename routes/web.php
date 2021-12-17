@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-Route::post('/books', [BooksController::class, 'findBook'])->name('findBook');
-Route::post('/books/add', [BooksController::class, 'addBook'])->name('add');
+Route::post('/books', [BookController::class, 'findBook'])->name('findBook');
+Route::post('/books/add', [BookController::class, 'addBook'])->name('add');
 /* Route::get('/books', function () {
     return view('results');
 });
