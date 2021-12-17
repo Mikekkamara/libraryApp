@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\books;
+use App\Models\Book;
 use Illuminate\Http\Request;
-use Monolog\Formatter\JsonFormatter;
 
-class BooksController extends Controller
+class BookController extends Controller
 {
     public function findBook(Request $request){
+        
         $input = $request->input('input');
-        $database = books::where('bookTitle','like', $input.'%')->get();
+        $database = Book::where('bookTitle','like', $input.'%')->get();
         $count = count($database);
         // ddd($database->toJson());
 
@@ -22,7 +22,7 @@ class BooksController extends Controller
     }
     public function addBook(Request $request){
 
-        books::create([
+        Book::create([
             'bookTitle' => $request->input('bookTitle'),
             'Author' => $request->input('Author'),
             'shelfNumber' => $request->input('shelfNumber'),
