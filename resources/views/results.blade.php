@@ -25,18 +25,13 @@
             </tr>
         @else
         @foreach ($results as $result)
-            <tr class="text-capitalize">
+            <tr class="text-capitalize text-nowrap {{ $result->status == true ? 'bg-success' : '    ' }}">
                 <td>{{ $result->id }}</td>
                 <td>{{ $result->bookTitle }}</td>
                 <td>{{ $result->Author }}</td>
                 <td>{{ $result->shelfNumber }}</td>
                 <td
-                class="@if ($result->status == 'Available')
-                    border border-success border-2
-                @else
-                    border border-danger border-2
-                @endif"
-                >{{ $result->status }}</td>
+                class="">{{ $result->status == true ? 'Available' : 'Not Available' }}</td>
             </tr>
         @endforeach
         @endif
@@ -47,6 +42,5 @@
     <script></script>
 </body>
 </html>
-
 
 
