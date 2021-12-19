@@ -9,7 +9,7 @@ class BookController extends Controller
     public function findBook(Request $request){
         
         $input = $request->input('input');
-        $database = Book::where('bookTitle','like', $input.'%')->get();
+        $database = Book::where('bookTitle','like', $input.'%')->paginate(10);
         $count = count($database);
         // ddd($database->toJson());
 
