@@ -9,10 +9,10 @@
 </head>
 <body>
     <p class="lead text-center display-5 text-capitalize p-3 mt-2">Books matching description</p>
-    <div class="container w-50">
-        <table class="table table-bordered mt-5 mx-auto">
+    <div class="table-responsive w-75 mx-auto">
+        <table class="table table-striped table-bordered text-nowrap  mt-5 mx-auto">
             {{-- <caption>Books</caption> --}}
-        <tr>
+        <tr class="">
             <th>Book Id</th>
             <th>Book Title</th>
             <th>Author</th>
@@ -25,7 +25,7 @@
             </tr>
         @else
         @foreach ($results as $result)
-            <tr class="text-capitalize text-nowrap {{ $result->status == true ? 'bg-success' : '    ' }}">
+            <tr class="text-capitalize{{ $result->status == true ? 'bg-success' : '    ' }}">
                 <td>{{ $result->id }}</td>
                 <td>{{ $result->bookTitle }}</td>
                 <td>{{ $result->Author }}</td>
@@ -37,7 +37,8 @@
         @endif
 
     </table>
-    <a href="{{ route('welcome') }}" class="btn btn-outline-primary mx-auto form-control">Close</a>
+    <p>{{ $results->onEachSide(5)->links() }}</p>
+    <a href="{{ route('welcome') }}" class="btn btn-outline-primary mx-auto form-control my-5">Close</a>
     </div>
     <script></script>
 </body>

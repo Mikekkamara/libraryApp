@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-Route::post('/books', [BookController::class, 'findBook'])->name('findBook');
+Route::get('/books', [BookController::class, 'findBook'])->name('findBook');
 Route::post('/books/add', [BookController::class, 'addBook'])->name('add');
 /* Route::get('/books', function () {
     return view('results');

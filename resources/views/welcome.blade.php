@@ -16,7 +16,7 @@
 
         <div class="container text-center">
             <i class="far fa-hand-point-down fa-6x mb-4"></i> <br>
-            <form action="{{ route('findBook') }}" class="needs-validation" novalidate id="formSub" method="POST">
+            <form action="{{ route('findBook') }}" class="needs-validation" novalidate id="formSub" method="GET">
             @csrf
                 <input class="form-control text-center" list="datalistOptions" id="exampleDataList" placeholder="Enter Book Title" autofocus name="input">
                 <datalist id="datalistOptions">
